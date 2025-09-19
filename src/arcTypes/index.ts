@@ -1,5 +1,5 @@
 import { Configuration } from "@kibocommerce/rest-sdk";
-
+import {Cart, CartItem, Order, OrderItem, Payment, PaymentAction, Return, ReturnAction} from "@kibocommerce/rest-sdk/clients/Commerce/models"
 /**
  * Modify this list if you need more actions
  */
@@ -192,345 +192,345 @@ export function createArcFunction(
 
 
 export interface BaseEmbeddedContext extends BaseContext{
-  exec: any;
-  get: any;
+  exec: void;
+  get: void;
 }
 
 // Cart Action Contexts
 export interface EmbeddedCommerceCartsGetAfterContext extends BaseContext {
   exec: {
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId: string): any;
-    removeItemData(key: string, itemId: string): any;
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): any;
-    removeItem(itemId: string): any;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId: string): void;
+    removeItemData(key: string, itemId: string): void;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): void;
+    removeItem(itemId: string): void;
   };
   get: {
-    cart(): any;
+    cart(): Cart;
   };
 }
 
 export interface EmbeddedCommerceCartsAddItemBeforeContext extends BaseContext {
   exec: {
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId?: string): any;
-    removeItemData(key: string, itemId?: string): any;
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): any;
-    removeItem(itemId: string): any;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId?: string): void;
+    removeItemData(key: string, itemId?: string): void;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): void;
+    removeItem(itemId: string): void;
   };
   get: {
-    cart(): any;
-    cartItem(): any;
+    cart(): Cart;
+    cartItem(): CartItem;
   };
 }
 
 export interface EmbeddedCommerceCartsAddItemAfterContext extends BaseContext {
   exec: {
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId?: string): any;
-    removeItemData(key: string, itemId?: string): any;
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): any;
-    removeItem(itemId: string): any;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId?: string): void;
+    removeItemData(key: string, itemId?: string): void;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): void;
+    removeItem(itemId: string): void;
   };
   get: {
-    cart(): any;
-    cartItem(): any;
+    cart(): Cart;
+    cartItem(): CartItem;
   };
 }
 
 export interface EmbeddedCommerceCartsUpdateItemBeforeContext extends BaseContext {
   exec: {
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId?: string): any;
-    removeItemData(key: string, itemId?: string): any;
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): any;
-    removeItem(itemId: string): any;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId?: string): void;
+    removeItemData(key: string, itemId?: string): void;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): void;
+    removeItem(itemId: string): void;
   };
   get: {
-    cart(): any;
-    cartItem(): any;
+    cart(): Cart;
+    cartItem(): CartItem;
   };
 }
 
 export interface EmbeddedCommerceCartsUpdateItemAfterContext extends BaseContext {
   exec: {
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId?: string): any;
-    removeItemData(key: string, itemId?: string): any;
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): any;
-    removeItem(itemId: string): any;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId?: string): void;
+    removeItemData(key: string, itemId?: string): void;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): void;
+    removeItem(itemId: string): void;
   };
   get: {
-    cart(): any;
-    cartItem(): any;
+    cart(): Cart;
+    cartItem(): CartItem;
   };
 }
 
 export interface EmbeddedCommerceCartsDeleteItemBeforeContext extends BaseContext {
   exec: {
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId?: string): any;
-    removeItemData(key: string, itemId?: string): any;
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): any;
-    removeItem(itemId: string): any;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId?: string): void;
+    removeItemData(key: string, itemId?: string): void;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): void;
+    removeItem(itemId: string): void;
   };
   get: {
-    cart(): any;
-    cartItem(): any;
+    cart(): Cart;
+    cartItem(): CartItem;
   };
 }
 
 export interface EmbeddedCommerceCartsDeleteItemAfterContext extends BaseContext {
   exec: {
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId?: string): any;
-    removeItemData(key: string, itemId?: string): any;
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): any;
-    removeItem(itemId: string): any;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId?: string): void;
+    removeItemData(key: string, itemId?: string): void;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): void;
+    removeItem(itemId: string): void;
   };
   get: {
-    cart(): any;
-    cartItem(): any;
+    cart(): Cart;
+    cartItem(): CartItem;
   };
 }
 
 export interface EmbeddedCommerceCartsDeleteCartBeforeContext extends BaseContext {
   exec: {
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId: string): any;
-    removeItemData(key: string, itemId: string): any;
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): any;
-    removeItem(itemId: string): any;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId: string): void;
+    removeItemData(key: string, itemId: string): void;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): void;
+    removeItem(itemId: string): void;
   };
   get: {
-    cart(): any;
+    cart(): Cart;
   };
 }
 
 export interface EmbeddedCommerceCartsDeleteCartAfterContext extends BaseContext {
   exec: {
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId: string): any;
-    removeItemData(key: string, itemId: string): any;
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): any;
-    removeItem(itemId: string): any;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId: string): void;
+    removeItemData(key: string, itemId: string): void;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): void;
+    removeItem(itemId: string): void;
   };
   get: {
-    cart(): any;
+    cart(): Cart;
   };
 }
 
 // Order Action Contexts
 export interface EmbeddedCommerceOrdersAddItemBeforeContext extends BaseContext {
   exec: {
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): any;
-    setAttribute(fqn: string, values: any): any;
-    removeAttribute(fqn: string): any;
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId?: string): any;
-    removeItemData(key: string, itemId?: string): any;
-    setDutyAmount(dutyAmount: number): any;
-    setItemDutyAmount(dutyAmount: number, itemId?: string): any;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): void;
+    setAttribute(fqn: string, values: any): void;
+    removeAttribute(fqn: string): void;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId?: string): void;
+    removeItemData(key: string, itemId?: string): void;
+    setDutyAmount(dutyAmount: number): void;
+    setItemDutyAmount(dutyAmount: number, itemId?: string): void;
   };
   get: {
-    order(): any;
-    orderItem(): any;
+    order(): Order;
+    orderItem(): OrderItem;
   };
 }
 
 export interface EmbeddedCommerceOrdersAddItemAfterContext extends BaseContext {
   exec: {
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): any;
-    setAttribute(fqn: string, values: any): any;
-    removeAttribute(fqn: string): any;
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId?: string): any;
-    removeItemData(key: string, itemId?: string): any;
-    setDutyAmount(dutyAmount: number): any;
-    setItemDutyAmount(dutyAmount: number, itemId?: string): any;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): void;
+    setAttribute(fqn: string, values: any): void;
+    removeAttribute(fqn: string): void;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId?: string): void;
+    removeItemData(key: string, itemId?: string): void;
+    setDutyAmount(dutyAmount: number): void;
+    setItemDutyAmount(dutyAmount: number, itemId?: string): void;
   };
   get: {
-    order(): any;
-    orderItem(): any;
+    order(): Order;
+    orderItem(): OrderItem;
   };
 }
 
 export interface EmbeddedCommerceOrdersPriceBeforeContext extends BaseContext {
   exec: {
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): any;
-    setAttribute(fqn: string, values: any): any;
-    removeAttribute(fqn: string): any;
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId: string): any;
-    removeItemData(key: string, itemId: string): any;
-    setDutyAmount(dutyAmount: number): any;
-    setHandlingAmount(handlingAmount: number): any;
-    setItemHandlingAmount(handlingAmount: number, itemId: string): any;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): void;
+    setAttribute(fqn: string, values: any): void;
+    removeAttribute(fqn: string): void;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId: string): void;
+    removeItemData(key: string, itemId: string): void;
+    setDutyAmount(dutyAmount: number): void;
+    setHandlingAmount(handlingAmount: number): void;
+    setItemHandlingAmount(handlingAmount: number, itemId: string): void;
   };
   get: {
-    order(): any;
+    order(): Order;
   };
 }
 
 export interface EmbeddedCommerceOrdersPriceAfterContext extends BaseContext {
   exec: {
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): any;
-    setAttribute(fqn: string, values: any): any;
-    removeAttribute(fqn: string): any;
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId: string): any;
-    removeItemData(key: string, itemId: string): any;
-    setDutyAmount(dutyAmount: number): any;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): void;
+    setAttribute(fqn: string, values: any): void;
+    removeAttribute(fqn: string): void;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId: string): void;
+    removeItemData(key: string, itemId: string): void;
+    setDutyAmount(dutyAmount: number): void;
   };
   get: {
-    order(): any;
+    order(): Order;
   };
 }
 
 export interface EmbeddedCommerceOrdersDeleteItemBeforeContext extends BaseContext {
   exec: {
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): any;
-    setAttribute(fqn: string, values: any): any;
-    removeAttribute(fqn: string): any;
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId?: string): any;
-    removeItemData(key: string, itemId?: string): any;
-    setDutyAmount(dutyAmount: number): any;
-    setItemDutyAmount(dutyAmount: number, itemId?: string): any;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): void;
+    setAttribute(fqn: string, values: any): void;
+    removeAttribute(fqn: string): void;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId?: string): void;
+    removeItemData(key: string, itemId?: string): void;
+    setDutyAmount(dutyAmount: number): void;
+    setItemDutyAmount(dutyAmount: number, itemId?: string): void;
   };
   get: {
-    order(): any;
-    orderItem(): any;
+    order(): Order;
+    orderItem(): OrderItem;
   };
 }
 
 export interface EmbeddedCommerceOrdersDeleteItemAfterContext extends BaseContext {
   exec: {
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): any;
-    setAttribute(fqn: string, values: any): any;
-    removeAttribute(fqn: string): any;
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId?: string): any;
-    removeItemData(key: string, itemId?: string): any;
-    setDutyAmount(dutyAmount: number): any;
-    setItemDutyAmount(dutyAmount: number, itemId?: string): any;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId?: string): void;
+    setAttribute(fqn: string, values: any): void;
+    removeAttribute(fqn: string): void;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId?: string): void;
+    removeItemData(key: string, itemId?: string): void;
+    setDutyAmount(dutyAmount: number): void;
+    setItemDutyAmount(dutyAmount: number, itemId?: string): void;
   };
   get: {
-    order(): any;
-    orderItem(): any;
+    order(): Order;
+    orderItem(): OrderItem;
   };
 }
 
 export interface EmbeddedCommerceOrdersActionBeforeContext extends BaseContext {
   exec: {
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): any;
-    setAttribute(fqn: string, values: any): any;
-    removeAttribute(fqn: string): any;
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId: string): any;
-    removeItemData(key: string, itemId: string): any;
-    setDutyAmount(dutyAmount: number): any;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): void;
+    setAttribute(fqn: string, values: any): void;
+    removeAttribute(fqn: string): void;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId: string): void;
+    removeItemData(key: string, itemId: string): void;
+    setDutyAmount(dutyAmount: number): void;
   };
   get: {
-    order(): any;
+    order(): Order;
   };
 }
 
 export interface EmbeddedCommerceOrdersActionAfterContext extends BaseContext {
   exec: {
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): any;
-    setAttribute(fqn: string, values: any): any;
-    removeAttribute(fqn: string): any;
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId: string): any;
-    removeItemData(key: string, itemId: string): any;
-    setDutyAmount(dutyAmount: number): any;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): void;
+    setAttribute(fqn: string, values: any): void;
+    removeAttribute(fqn: string): void;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId: string): void;
+    removeItemData(key: string, itemId: string): void;
+    setDutyAmount(dutyAmount: number): void;
   };
   get: {
-    order(): any;
+    order(): Order;
   };
 }
 
 export interface EmbeddedCommerceOrdersCreateFromCartBeforeContext extends BaseContext {
   exec: {
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): any;
-    setAttribute(fqn: string, values: any): any;
-    removeAttribute(fqn: string): any;
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId: string): any;
-    removeItemData(key: string, itemId: string): any;
-    setDutyAmount(dutyAmount: number): any;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): void;
+    setAttribute(fqn: string, values: any): void;
+    removeAttribute(fqn: string): void;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId: string): void;
+    removeItemData(key: string, itemId: string): void;
+    setDutyAmount(dutyAmount: number): void;
   };
   get: {
-    order(): any;
+    order(): Order;
   };
 }
 
 export interface EmbeddedCommerceOrdersCreateFromCartAfterContext extends BaseContext {
   exec: {
-    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): any;
-    setAttribute(fqn: string, values: any): any;
-    removeAttribute(fqn: string): any;
-    setData(key: string, value: any): any;
-    removeData(key: string): any;
-    setItemData(key: string, value: any, itemId: string): any;
-    removeItemData(key: string, itemId: string): any;
-    setDutyAmount(dutyAmount: number): any;
+    setItemAllocation(allocationId: number, expiration: Date, productCode: string, itemId: string): void;
+    setAttribute(fqn: string, values: any): void;
+    removeAttribute(fqn: string): void;
+    setData(key: string, value: any): void;
+    removeData(key: string): void;
+    setItemData(key: string, value: any, itemId: string): void;
+    removeItemData(key: string, itemId: string): void;
+    setDutyAmount(dutyAmount: number): void;
   };
   get: {
-    order(): any;
+    order(): Order;
   };
 }
 
 // Payment Action Contexts
 export interface EmbeddedCommercePaymentsActionPerformPaymentInteractionContext extends BaseContext {
   exec: {
-    addPaymentInteraction(paymentInteraction: string): any;
-    setPaymentAmountRequested(amount: number): any;
-    setPaymentAmountCollected(amount: number): any;
-    setPaymentAmountCredited(amount: number): any;
+    addPaymentInteraction(paymentInteraction: string): void;
+    setPaymentAmountRequested(amount: number): void;
+    setPaymentAmountCollected(amount: number): void;
+    setPaymentAmountCredited(amount: number): void;
   };
   get: {
-    payment(): any;
-    paymentAction(): any;
+    payment(): Payment;
+    paymentAction(): PaymentAction;
   };
 }
 
 export interface EmbeddedCommercePaymentsActionBeforeContext extends BaseContext {
   exec: {
-    setActionAmount(amount: number): any;
+    setActionAmount(amount: number): void;
     setPaymentData(key: string, value: any): void;
     removePaymentData(key: string): void;
     setActionPreAuthFlag(isPreAuth: boolean): void;
   };
-  setPaymentTerm(purchaseOrderPaymentTermObject: any): any;
+  setPaymentTerm(purchaseOrderPaymentTermObject: any): void;
   get: {
-    payment(): any;
-    paymentAction(): any;
+    payment(): Payment;
+    paymentAction(): PaymentAction;
   };
 }
 
 export interface EmbeddedCommercePaymentsActionAfterContext extends BaseContext {
   exec: {
-    setActionAmount(amount: number): any;
+    setActionAmount(amount: number): void;
     setFailedStateName(stateName: string): void;
     setSuccessFlag(isSuccess: boolean): void;
     setNewStateName(stateName: string): void;
@@ -540,8 +540,8 @@ export interface EmbeddedCommercePaymentsActionAfterContext extends BaseContext 
     setActionPreAuthFlag(isPreAuth: boolean): void;
   };
   get: {
-    payment(): any;
-    paymentAction(): any;
+    payment(): Payment;
+    paymentAction(): PaymentAction;
   };
 }
 
@@ -568,29 +568,29 @@ export interface EmbeddedCommerceReturnRetrieveReasonsContext extends BaseContex
 
 export interface EmbeddedCommerceCheckoutsPriceBeforeContext extends BaseContext {
   exec: {
-    setHandlingAmount(handlingAmount: number): any;
-    setItemHandlingAmount(handlingAmount: number, itemId: string): any;
+    setHandlingAmount(handlingAmount: number): void;
+    setItemHandlingAmount(handlingAmount: number, itemId: string): void;
   };
   get: {
-    cart(): any;
+    cart(): Cart;
   };
 }
 
 export interface EmbeddedCommerceReturnActionsBeforeContext extends BaseContext {
   exec: {
-    addReturnItem(returnItem: any): any;
-    setRMADeadline(rmaDeadline: Date): any;
+    addReturnItem(returnItem: any): void;
+    setRMADeadline(rmaDeadline: Date): void;
   };
   get: {
-    rma(): any;
-    returnAction(): any;
+    rma(): Return;
+    returnAction(): ReturnAction;
   };
 }
 
 // Catalog Action Contexts
 export interface EmbeddedCommerceCatalogStorefrontProductsGetPriceListHierachyContext extends BaseContext {
   get: {
-    propertyValue(arg: string): any;
+    propertyValue(arg: string): void;
     priceListHierarchy(): any[];
   };
 }
@@ -598,55 +598,55 @@ export interface EmbeddedCommerceCatalogStorefrontProductsGetPriceListHierachyCo
 // Checkout Action Contexts
 export interface EmbeddedCommerceCheckoutsPriceBeforeContext extends BaseContext {
   exec: {
-    setHandlingAmount(handlingAmount: number): any;
-    setItemHandlingAmount(handlingAmount: number, itemId: string): any;
+    setHandlingAmount(handlingAmount: number): void;
+    setItemHandlingAmount(handlingAmount: number, itemId: string): void;
   };
   get: {
-    cart(): any;
+    cart(): Cart;
   };
 }
 
 export interface EmbeddedCommerceReturnActionsBeforeContext extends BaseContext {
   exec: {
-    addReturnItem(returnItem: any): any;
-    setRMADeadline(rmaDeadline: Date): any;
+    addReturnItem(returnItem: any): void;
+    setRMADeadline(rmaDeadline: Date): void;
   };
   get: {
-    rma(): any;
-    returnAction(): any;
+    rma(): Return;
+    returnAction(): ReturnAction;
   };
 }
 
 export interface EmbeddedCommerceReturnActionsAfterContext extends BaseContext {
   exec: {
-    authorizeReturn(): any;
-    rejectReturn(): any;
-    cancelReturn(): any;
-    closeReturn(): any;
+    authorizeReturn(): void;
+    rejectReturn(): void;
+    cancelReturn(): void;
+    closeReturn(): void;
   };
   get: {
-    rma(): any;
-    returnAction(): any;
+    rma(): Return;
+    returnAction(): ReturnAction;
   };
 }
 
 export interface EmbeddedCommerceReturnGetRmaLabelsBeforeContext extends BaseContext {
   exec: {
-    setDestinationAddress(destinationAddressContact: any): any;
-    setOriginAddress(originAddressContact: any): any;
-    setShippingMethodCode(shippingMethodCode: string): any;
+    setDestinationAddress(destinationAddressContact: any): void;
+    setOriginAddress(originAddressContact: any): void;
+    setShippingMethodCode(shippingMethodCode: string): void;
   };
   get: {
-    getShipmentInfo(): any;
-    getPackage(index: number): any;
+    getShipmentInfo(): void;
+    getPackage(index: number): void;
     getPackagesCount(): number;
   };
 }
 
 export interface EmbeddedCommerceReturnGetRmaLabelsAfterContext extends BaseContext {
   get: {
-    getShipmentInfo(): any;
-    getPackage(index: number): any;
+    getShipmentInfo(): void;
+    getPackage(index: number): void;
     getPackagesCount(): number;
   };
 }
