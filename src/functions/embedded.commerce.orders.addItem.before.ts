@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, EmbeddedCommerceOrdersAddItemBeforeContext } from "../arcTypes";
 
-function embeddedCommerceOrdersAddItemBefore(context:any, callback: Callback) {
+function embeddedCommerceOrdersAddItemBefore(context: EmbeddedCommerceOrdersAddItemBeforeContext, callback: Callback) {
     console.log("embedded.commerce.orders.addItem.before");
 }
 

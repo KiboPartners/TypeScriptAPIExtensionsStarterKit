@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, EmbeddedCommerceCartsUpdateItemAfterContext } from "../arcTypes";
 
-function embeddedCommerceCartsUpdateItemAfter(context:any, callback: Callback) {
+function embeddedCommerceCartsUpdateItemAfter(context: EmbeddedCommerceCartsUpdateItemAfterContext, callback: Callback) {
     console.log("embedded.commerce.carts.updateItem.after");
 }
 

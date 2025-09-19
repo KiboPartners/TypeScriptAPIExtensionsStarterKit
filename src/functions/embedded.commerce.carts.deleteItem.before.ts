@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, EmbeddedCommerceCartsDeleteItemBeforeContext } from "../arcTypes";
 
-function embeddedCommerceCartsDeleteItemBefore(context:any, callback: Callback) {
+function embeddedCommerceCartsDeleteItemBefore(context: EmbeddedCommerceCartsDeleteItemBeforeContext, callback: Callback) {
     console.log("embedded.commerce.carts.deleteItem.before");
 }
 

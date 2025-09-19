@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCustomerCreditsResendCreditCreatedEmailBefore(context:any, callback: Callback) {
+function httpCommerceCustomerCreditsResendCreditCreatedEmailBefore(context:HttpContext, callback: Callback) {
     console.log("http.commerce.customer.credits.resendCreditCreatedEmail.before");
 }
 

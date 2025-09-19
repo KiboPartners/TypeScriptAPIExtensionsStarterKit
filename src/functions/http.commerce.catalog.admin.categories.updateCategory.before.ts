@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogAdminCategoriesUpdateCategoryBefore(context:any, callback: Callback) {
+function httpCommerceCatalogAdminCategoriesUpdateCategoryBefore(context:HttpContext, callback: Callback) {
     console.log("http.commerce.catalog.admin.categories.updateCategory.before");
 }
 

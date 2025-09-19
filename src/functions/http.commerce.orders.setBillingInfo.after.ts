@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceOrdersSetBillingInfoAfter(context:any, callback: Callback) {
+function httpCommerceOrdersSetBillingInfoAfter(context:HttpContext, callback: Callback) {
     console.log("http.commerce.orders.setBillingInfo.after");
 }
 

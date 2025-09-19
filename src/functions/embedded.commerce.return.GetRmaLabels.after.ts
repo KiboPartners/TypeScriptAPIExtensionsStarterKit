@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, EmbeddedCommerceReturnGetRmaLabelsAfterContext } from "../arcTypes";
 
-function embeddedCommerceReturnGetRmaLabelsAfter(context:any, callback: Callback) {
+function embeddedCommerceReturnGetRmaLabelsAfter(context:EmbeddedCommerceReturnGetRmaLabelsAfterContext, callback: Callback) {
     console.log("embedded.commerce.return.GetRmaLabels.after");
 }
 

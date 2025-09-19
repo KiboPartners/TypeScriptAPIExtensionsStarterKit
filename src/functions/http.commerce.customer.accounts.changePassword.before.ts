@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCustomerAccountsChangePasswordBefore(context:any, callback: Callback) {
+function httpCommerceCustomerAccountsChangePasswordBefore(context:HttpContext, callback: Callback) {
     console.log("http.commerce.customer.accounts.changePassword.before");
 }
 

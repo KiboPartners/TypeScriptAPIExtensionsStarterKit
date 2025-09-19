@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, EmbeddedCommerceReturnRetrieveReasonsContext } from "../arcTypes";
 
-function embeddedCommerceReturnRetrieveReasons(context:any, callback: Callback) {
+function embeddedCommerceReturnRetrieveReasons(context: EmbeddedCommerceReturnRetrieveReasonsContext, callback: Callback) {
     console.log("embedded.commerce.return.retrieveReasons");
 }
 

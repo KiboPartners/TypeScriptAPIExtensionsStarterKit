@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCustomerCreditsGetAuditEntriesBefore(context:any, callback: Callback) {
+function httpCommerceCustomerCreditsGetAuditEntriesBefore(context:HttpContext, callback: Callback) {
     console.log("http.commerce.customer.credits.getAuditEntries.before");
 }
 

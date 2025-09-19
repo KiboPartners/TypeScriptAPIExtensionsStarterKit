@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceReturnsCreateReturnItemBefore(context:any, callback: Callback) {
+function httpCommerceReturnsCreateReturnItemBefore(context:HttpContext, callback: Callback) {
     console.log("http.commerce.returns.createReturnItem.before");
 }
 

@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogStorefrontPricingPriceOrderAfter(context:any, callback: Callback) {
+function httpCommerceCatalogStorefrontPricingPriceOrderAfter(context:HttpContext, callback: Callback) {
     console.log("http.commerce.catalog.storefront.pricing.priceOrder.after");
 }
 

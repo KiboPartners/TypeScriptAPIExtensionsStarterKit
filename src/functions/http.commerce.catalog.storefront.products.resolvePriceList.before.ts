@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogStorefrontProductsResolvePriceListBefore(context:any, callback: Callback) {
+function httpCommerceCatalogStorefrontProductsResolvePriceListBefore(context:HttpContext, callback: Callback) {
     console.log("http.commerce.catalog.storefront.products.resolvePriceList.before");
 }
 

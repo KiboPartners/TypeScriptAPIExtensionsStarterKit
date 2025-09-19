@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceReturnsUpdatePackageAfter(context:any, callback: Callback) {
+function httpCommerceReturnsUpdatePackageAfter(context:HttpContext, callback: Callback) {
     console.log("http.commerce.returns.updatePackage.after");
 }
 

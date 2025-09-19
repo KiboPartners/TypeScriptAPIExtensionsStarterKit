@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogStorefrontProductsValidateProductAfter(context:any, callback: Callback) {
+function httpCommerceCatalogStorefrontProductsValidateProductAfter(context:HttpContext, callback: Callback) {
     console.log("http.commerce.catalog.storefront.products.validateProduct.after");
 }
 

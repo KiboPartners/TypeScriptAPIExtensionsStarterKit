@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceReturnsCreatePackageAfter(context:any, callback: Callback) {
+function httpCommerceReturnsCreatePackageAfter(context:HttpContext, callback: Callback) {
     console.log("http.commerce.returns.createPackage.after");
 }
 

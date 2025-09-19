@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogStorefrontProductsGetProductForIndexingAfter(context:any, callback: Callback) {
+function httpCommerceCatalogStorefrontProductsGetProductForIndexingAfter(context:HttpContext, callback: Callback) {
     console.log("http.commerce.catalog.storefront.products.getProductForIndexing.after");
 }
 

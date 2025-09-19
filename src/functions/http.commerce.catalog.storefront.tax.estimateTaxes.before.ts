@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogStorefrontTaxEstimateTaxesBefore(context:any, callback: Callback) {
+function httpCommerceCatalogStorefrontTaxEstimateTaxesBefore(context:HttpContext, callback: Callback) {
     console.log("http.commerce.catalog.storefront.tax.estimateTaxes.before");
 }
 

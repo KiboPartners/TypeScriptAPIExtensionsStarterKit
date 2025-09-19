@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, EmbeddedCommerceCartsGetAfterContext } from "../arcTypes";
 
-function embeddedCommerceCartsGetAfter(context:any, callback: Callback) {
+function embeddedCommerceCartsGetAfter(context: EmbeddedCommerceCartsGetAfterContext, callback: Callback) {
     console.log("embedded.commerce.carts.get.after");
 }
 

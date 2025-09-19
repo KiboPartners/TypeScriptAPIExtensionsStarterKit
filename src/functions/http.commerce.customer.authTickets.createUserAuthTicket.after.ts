@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCustomerAuthTicketsCreateUserAuthTicketAfter(context:any, callback: Callback) {
+function httpCommerceCustomerAuthTicketsCreateUserAuthTicketAfter(context:HttpContext, callback: Callback) {
     console.log("http.commerce.customer.authTickets.createUserAuthTicket.after");
 }
 

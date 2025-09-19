@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, EmbeddedCommerceCatalogStorefrontProductsGetPriceListHierachyContext } from "../arcTypes";
 
-function embeddedCommerceCatalogStorefrontProductsGetPriceListHierachy(context:any, callback: Callback) {
+function embeddedCommerceCatalogStorefrontProductsGetPriceListHierachy(context: EmbeddedCommerceCatalogStorefrontProductsGetPriceListHierachyContext, callback: Callback) {
     console.log("embedded.commerce.catalog.storefront.products.getPriceListHierachy");
 }
 

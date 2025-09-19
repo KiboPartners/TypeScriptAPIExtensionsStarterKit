@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceRoutingCandidatesBefore(context:any, callback: Callback) {
+function httpCommerceRoutingCandidatesBefore(context:HttpContext, callback: Callback) {
     console.log("http.commerce.routing.candidates.before");
 }
 

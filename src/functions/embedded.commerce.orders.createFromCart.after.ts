@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, EmbeddedCommerceOrdersCreateFromCartAfterContext } from "../arcTypes";
 
-function embeddedCommerceOrdersCreateFromCartAfter(context:any, callback: Callback) {
+function embeddedCommerceOrdersCreateFromCartAfter(context: EmbeddedCommerceOrdersCreateFromCartAfterContext, callback: Callback) {
     console.log("embedded.commerce.orders.createFromCart.after");
 }
 

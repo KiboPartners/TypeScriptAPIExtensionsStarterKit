@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogAdminCategoriesAddCategoryAfter(context:any, callback: Callback) {
+function httpCommerceCatalogAdminCategoriesAddCategoryAfter(context:HttpContext, callback: Callback) {
     console.log("http.commerce.catalog.admin.categories.addCategory.after");
 }
 

@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCustomerCreditsGetCreditAfter(context:any, callback: Callback) {
+function httpCommerceCustomerCreditsGetCreditAfter(context:HttpContext, callback: Callback) {
     console.log("http.commerce.customer.credits.getCredit.after");
 }
 

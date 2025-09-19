@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceOrdersAddItemBefore(context:any, callback: Callback) {
+function httpCommerceOrdersAddItemBefore(context:HttpContext, callback: Callback) {
     console.log("http.commerce.orders.addItem.before");
 }
 

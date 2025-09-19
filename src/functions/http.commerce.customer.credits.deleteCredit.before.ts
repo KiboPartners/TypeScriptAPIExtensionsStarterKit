@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCustomerCreditsDeleteCreditBefore(context:any, callback: Callback) {
+function httpCommerceCustomerCreditsDeleteCreditBefore(context:HttpContext, callback: Callback) {
     console.log("http.commerce.customer.credits.deleteCredit.before");
 }
 

@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceReturnsDeleteShipmentAfter(context:any, callback: Callback) {
+function httpCommerceReturnsDeleteShipmentAfter(context:HttpContext, callback: Callback) {
     console.log("http.commerce.returns.deleteShipment.after");
 }
 

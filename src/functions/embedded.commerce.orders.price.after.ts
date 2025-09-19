@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, EmbeddedCommerceOrdersPriceAfterContext } from "../arcTypes";
 
-function embeddedCommerceOrdersPriceAfter(context:any, callback: Callback) {
+function embeddedCommerceOrdersPriceAfter(context: EmbeddedCommerceOrdersPriceAfterContext, callback: Callback) {
     console.log("embedded.commerce.orders.price.after");
 }
 

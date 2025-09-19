@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, EmbeddedCommercePaymentsActionPerformPaymentInteractionContext } from "../arcTypes";
 
-function embeddedCommercePaymentsActionPerformPaymentInteraction(context:any, callback: Callback) {
+function embeddedCommercePaymentsActionPerformPaymentInteraction(context: EmbeddedCommercePaymentsActionPerformPaymentInteractionContext, callback: Callback) {
     console.log("embedded.commerce.payments.action.performPaymentInteraction");
 }
 

@@ -1,6 +1,6 @@
-import { Callback } from "../arcTypes";
+import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceFulfillmentCreateShipmentsBefore(context:any, callback: Callback) {
+function httpCommerceFulfillmentCreateShipmentsBefore(context:HttpContext, callback: Callback) {
     console.log("http.commerce.fulfillment.createShipments.before");
 }
 
