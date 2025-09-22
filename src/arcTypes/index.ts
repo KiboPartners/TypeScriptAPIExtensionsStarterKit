@@ -462,6 +462,7 @@ export interface EmbeddedCommerceOrdersActionAfterContext extends BaseContext {
     setItemData(key: string, value: any, itemId: string): void;
     removeItemData(key: string, itemId: string): void;
     setDutyAmount(dutyAmount: number): void;
+    setShipmentCreationOffset(offset: number): void;
   };
   get: {
     order(): Order;
@@ -478,6 +479,7 @@ export interface EmbeddedCommerceOrdersCreateFromCartBeforeContext extends BaseC
     setItemData(key: string, value: any, itemId: string): void;
     removeItemData(key: string, itemId: string): void;
     setDutyAmount(dutyAmount: number): void;
+    setShipmentCreationOffset(offset: number): void;
   };
   get: {
     order(): Order;
