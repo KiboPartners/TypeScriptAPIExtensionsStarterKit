@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceReturnsDeleteShipmentBefore(context:HttpContext<any>, callback: Callback) {
+import {Shipment} from "@kibocommerce/rest-sdk/clients/Commerce/models";
+
+function httpCommerceReturnsDeleteShipmentBefore(context:HttpContext<Shipment>, callback: Callback) {
     console.log("http.commerce.returns.deleteShipment.before");
 }
 

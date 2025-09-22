@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogStorefrontProductsResolvePriceListAfter(context:HttpContext<any>, callback: Callback) {
+import {ResolvedPriceList} from "@kibocommerce/rest-sdk/clients/CatalogStorefront"
+
+function httpCommerceCatalogStorefrontProductsResolvePriceListAfter(context:HttpContext<ResolvedPriceList>, callback: Callback) {
     console.log("http.commerce.catalog.storefront.products.resolvePriceList.after");
 }
 

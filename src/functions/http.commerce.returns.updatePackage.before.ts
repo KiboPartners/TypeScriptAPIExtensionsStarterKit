@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceReturnsUpdatePackageBefore(context:HttpContext<any>, callback: Callback) {
+import { Package } from "@kibocommerce/rest-sdk/clients/Commerce/models";
+
+function httpCommerceReturnsUpdatePackageBefore(context:HttpContext<Package>, callback: Callback) {
     console.log("http.commerce.returns.updatePackage.before");
 }
 

@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceOrdersSetFulFillmentInfoAfter(context:HttpContext<any>, callback: Callback) {
+import { FulfillmentInfo } from "@kibocommerce/rest-sdk/clients/Commerce/models";
+
+function httpCommerceOrdersSetFulFillmentInfoAfter(context:HttpContext<FulfillmentInfo>, callback: Callback) {
     console.log("http.commerce.orders.setFulFillmentInfo.after");
 }
 

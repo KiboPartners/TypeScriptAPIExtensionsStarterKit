@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceReturnsCreateReturnItemAfter(context:HttpContext<any>, callback: Callback) {
+import { ReturnItem } from "@kibocommerce/rest-sdk/clients/Commerce/models";
+
+function httpCommerceReturnsCreateReturnItemAfter(context:HttpContext<ReturnItem>, callback: Callback) {
     console.log("http.commerce.returns.createReturnItem.after");
 }
 

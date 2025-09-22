@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCustomerCreditsGetTransactionsAfter(context:HttpContext<any>, callback: Callback) {
+import { Transaction } from "@kibocommerce/rest-sdk/clients/Customer";
+
+function httpCommerceCustomerCreditsGetTransactionsAfter(context:HttpContext<any, Transaction[]>, callback: Callback) {
     console.log("http.commerce.customer.credits.getTransactions.after");
 }
 

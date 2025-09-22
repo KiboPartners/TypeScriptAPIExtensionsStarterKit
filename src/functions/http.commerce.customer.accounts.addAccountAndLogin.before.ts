@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCustomerAccountsAddAccountAndLoginBefore(context:HttpContext<any>, callback: Callback) {
+import {CustomerAccountAndAuthInfo, CustomerAuthTicket} from "@kibocommerce/rest-sdk/clients/Customer"
+
+function httpCommerceCustomerAccountsAddAccountAndLoginBefore(context:HttpContext<CustomerAccountAndAuthInfo, CustomerAuthTicket>, callback: Callback) {
     console.log("http.commerce.customer.accounts.addAccountAndLogin.before");
 }
 

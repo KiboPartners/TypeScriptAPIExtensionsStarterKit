@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogStorefrontProductsValidateProductBefore(context:HttpContext<any>, callback: Callback) {
+import {Product} from "@kibocommerce/rest-sdk/clients/CatalogStorefront"
+
+function httpCommerceCatalogStorefrontProductsValidateProductBefore(context:HttpContext<Product>, callback: Callback) {
     console.log("http.commerce.catalog.storefront.products.validateProduct.before");
 }
 

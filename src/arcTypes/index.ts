@@ -134,12 +134,12 @@ export enum ActionId {
   "embedded.platform.applications.uninstall"
 }
 
-export interface HttpContext<T> extends BaseContext {
+export interface HttpContext<T, F = T> extends BaseContext {
   request: {
     body: T;
   };
   response: {
-    body: T;
+    body: F;
   };
 }
 

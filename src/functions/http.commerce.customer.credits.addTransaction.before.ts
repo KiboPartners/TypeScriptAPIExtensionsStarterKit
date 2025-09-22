@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCustomerCreditsAddTransactionBefore(context:HttpContext<any>, callback: Callback) {
+import { Transaction } from "@kibocommerce/rest-sdk/clients/Customer/models";
+
+function httpCommerceCustomerCreditsAddTransactionBefore(context:HttpContext<Transaction>, callback: Callback) {
     console.log("http.commerce.customer.credits.addTransaction.before");
 }
 

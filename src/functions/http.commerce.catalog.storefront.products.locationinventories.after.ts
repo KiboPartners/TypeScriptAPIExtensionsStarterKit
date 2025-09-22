@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogStorefrontProductsLocationinventoriesAfter(context:HttpContext<any>, callback: Callback) {
+import {LocationInventoryQuery} from "@kibocommerce/rest-sdk/clients/CatalogStorefront"
+
+function httpCommerceCatalogStorefrontProductsLocationinventoriesAfter(context:HttpContext<LocationInventoryQuery>, callback: Callback) {
     console.log("http.commerce.catalog.storefront.products.locationinventories.after");
 }
 
