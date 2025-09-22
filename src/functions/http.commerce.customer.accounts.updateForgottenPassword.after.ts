@@ -1,6 +1,6 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCustomerAccountsUpdateForgottenPasswordAfter(context:HttpContext, callback: Callback) {
+function httpCommerceCustomerAccountsUpdateForgottenPasswordAfter(context:HttpContext<any>, callback: Callback) {
     console.log("http.commerce.customer.accounts.updateForgottenPassword.after");
 }
 

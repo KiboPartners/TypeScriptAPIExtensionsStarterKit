@@ -1,6 +1,6 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogStorefrontProductsearchSearchAfter(context:HttpContext, callback: Callback) {
+function httpCommerceCatalogStorefrontProductsearchSearchAfter(context:HttpContext<any>, callback: Callback) {
     console.log("http.commerce.catalog.storefront.productsearch.search.after");
 }
 

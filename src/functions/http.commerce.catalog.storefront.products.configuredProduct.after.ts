@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogStorefrontProductsConfiguredProductAfter(context:HttpContext, callback: Callback) {
+import {Product} from "@kibocommerce/rest-sdk/clients/CatalogStorefront/models";
+
+function httpCommerceCatalogStorefrontProductsConfiguredProductAfter(context:HttpContext<Product>, callback: Callback) {
     console.log("http.commerce.catalog.storefront.products.configuredProduct.after");
 }
 

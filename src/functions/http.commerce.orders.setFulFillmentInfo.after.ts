@@ -1,6 +1,6 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceOrdersSetFulFillmentInfoAfter(context:HttpContext, callback: Callback) {
+function httpCommerceOrdersSetFulFillmentInfoAfter(context:HttpContext<any>, callback: Callback) {
     console.log("http.commerce.orders.setFulFillmentInfo.after");
 }
 

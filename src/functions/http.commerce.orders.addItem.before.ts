@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceOrdersAddItemBefore(context:HttpContext, callback: Callback) {
+import { OrderItem } from "@kibocommerce/rest-sdk/clients/Commerce/models";
+
+function httpCommerceOrdersAddItemBefore(context:HttpContext<OrderItem>, callback: Callback) {
     console.log("http.commerce.orders.addItem.before");
 }
 

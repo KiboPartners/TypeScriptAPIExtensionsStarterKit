@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogAdminProductsUpdateProductAfter(context:HttpContext, callback: Callback) {
+import {Product} from "@kibocommerce/rest-sdk/clients/CatalogAdministration"
+
+function httpCommerceCatalogAdminProductsUpdateProductAfter(context:HttpContext<Product>, callback: Callback) {
     console.log("http.commerce.catalog.admin.products.updateProduct.after");
 }
 

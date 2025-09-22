@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogStorefrontProductsGetProductForIndexingAfter(context:HttpContext, callback: Callback) {
+import {ProductForIndexing} from "@kibocommerce/rest-sdk/clients/CatalogStorefront/models";
+
+function httpCommerceCatalogStorefrontProductsGetProductForIndexingAfter(context:HttpContext<ProductForIndexing>, callback: Callback) {
     console.log("http.commerce.catalog.storefront.products.getProductForIndexing.after");
 }
 

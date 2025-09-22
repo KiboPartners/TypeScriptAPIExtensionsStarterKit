@@ -1,6 +1,6 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCustomerCreditsAddTransactionAfter(context:HttpContext, callback: Callback) {
+function httpCommerceCustomerCreditsAddTransactionAfter(context:HttpContext<any>, callback: Callback) {
     console.log("http.commerce.customer.credits.addTransaction.after");
 }
 

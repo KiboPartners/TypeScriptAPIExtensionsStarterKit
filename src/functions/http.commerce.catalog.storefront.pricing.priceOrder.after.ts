@@ -1,6 +1,8 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogStorefrontPricingPriceOrderAfter(context:HttpContext, callback: Callback) {
+import { TaxableOrder } from "@kibocommerce/rest-sdk/clients/PricingStorefront/models";
+
+function httpCommerceCatalogStorefrontPricingPriceOrderAfter(context:HttpContext<TaxableOrder>, callback: Callback) {
     console.log("http.commerce.catalog.storefront.pricing.priceOrder.after");
 }
 

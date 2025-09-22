@@ -134,13 +134,13 @@ export enum ActionId {
   "embedded.platform.applications.uninstall"
 }
 
-export interface HttpContext extends BaseContext{
+export interface HttpContext<T> extends BaseContext {
   request: {
-    body: any
-  },
+    body: T;
+  };
   response: {
-    body: any
-  }
+    body: T;
+  };
 }
 
 //TODO: add secureAppdata

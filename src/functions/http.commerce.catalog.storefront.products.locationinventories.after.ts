@@ -1,6 +1,6 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCatalogStorefrontProductsLocationinventoriesAfter(context:HttpContext, callback: Callback) {
+function httpCommerceCatalogStorefrontProductsLocationinventoriesAfter(context:HttpContext<any>, callback: Callback) {
     console.log("http.commerce.catalog.storefront.products.locationinventories.after");
 }
 

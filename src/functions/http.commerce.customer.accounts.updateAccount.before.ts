@@ -1,6 +1,6 @@
 import { Callback, HttpContext } from "../arcTypes";
 
-function httpCommerceCustomerAccountsUpdateAccountBefore(context:HttpContext, callback: Callback) {
+function httpCommerceCustomerAccountsUpdateAccountBefore(context:HttpContext<any>, callback: Callback) {
     console.log("http.commerce.customer.accounts.updateAccount.before");
 }
 
