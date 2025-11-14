@@ -79,6 +79,31 @@ import httpCommerceCustomerCreditsAddTransactionAfter from "./http.commerce.cust
 import httpCommerceCustomerCreditsGetAuditEntriesBefore from "./http.commerce.customer.credits.getAuditEntries.before";
 import httpCommerceCustomerCreditsGetAuditEntriesAfter from "./http.commerce.customer.credits.getAuditEntries.after";
 import httpCommerceFulfillmentCreateShipmentsBefore from "./http.commerce.fulfillment.createShipments.before";
+import httpCommerceFulfillmentCreateShipmentsAfter from "./http.commerce.fulfillment.createShipments.after";
+import httpCommerceFulfillmentGetShipmentBefore from "./http.commerce.fulfillment.getShipment.before";
+import httpCommerceFulfillmentGetShipmentAfter from "./http.commerce.fulfillment.getShipment.after";
+import httpCommerceFulfillmentGetShipmentsBefore from "./http.commerce.fulfillment.getShipments.before";
+import httpCommerceFulfillmentGetShipmentsAfter from "./http.commerce.fulfillment.getShipments.after";
+import httpCommerceFulfillmentFulfillShipmentBefore from "./http.commerce.fulfillment.fulfillShipment.before";
+import httpCommerceFulfillmentFulfillShipmentAfter from "./http.commerce.fulfillment.fulfillShipment.after";
+import httpCommerceFulfillmentReassignShipmentBefore from "./http.commerce.fulfillment.reassignShipment.before";
+import httpCommerceFulfillmentReassignShipmentAfter from "./http.commerce.fulfillment.reassignShipment.after";
+import httpCommerceFulfillmentReassignShipmentItemsBefore from "./http.commerce.fulfillment.reassignShipmentItems.before";
+import httpCommerceFulfillmentReassignShipmentItemsAfter from "./http.commerce.fulfillment.reassignShipmentItems.after";
+import httpCommerceFulfillmentReplaceShipmentBefore from "./http.commerce.fulfillment.replaceShipment.before";
+import httpCommerceFulfillmentReplaceShipmentAfter from "./http.commerce.fulfillment.replaceShipment.after";
+import httpCommerceFulfillmentRejectShipmentBefore from "./http.commerce.fulfillment.rejectShipment.before";
+import httpCommerceFulfillmentRejectShipmentAfter from "./http.commerce.fulfillment.rejectShipment.after";
+import httpCommerceFulfillmentRejectShipmentItemsBefore from "./http.commerce.fulfillment.rejectShipmentItems.before";
+import httpCommerceFulfillmentRejectShipmentItemsAfter from "./http.commerce.fulfillment.rejectShipmentItems.after";
+import httpCommerceFulfillmentTransferShipmentBefore from "./http.commerce.fulfillment.transferShipment.before";
+import httpCommerceFulfillmentTransferShipmentAfter from "./http.commerce.fulfillment.transferShipment.after";
+import httpCommerceFulfillmentTransferShipmentItemsBefore from "./http.commerce.fulfillment.transferShipmentItems.before";
+import httpCommerceFulfillmentTransferShipmentItemsAfter from "./http.commerce.fulfillment.transferShipmentItems.after";
+import httpCommerceFulfillmentFutureShipmentsBefore from "./http.commerce.fulfillment.futureShipments.before";
+import httpCommerceFulfillmentFutureShipmentsAfter from "./http.commerce.fulfillment.futureShipments.after";
+import httpCommerceFulfillmentFutureShipmentItemsBefore from "./http.commerce.fulfillment.futureShipmentItems.before";
+import httpCommerceFulfillmentFutureShipmentItemsAfter from "./http.commerce.fulfillment.futureShipmentItems.after";
 import embeddedCommerceOrdersAddItemBefore from "./embedded.commerce.orders.addItem.before";
 import embeddedCommerceOrdersAddItemAfter from "./embedded.commerce.orders.addItem.after";
 import embeddedCommerceOrdersPriceBefore from "./embedded.commerce.orders.price.before";
@@ -207,6 +232,31 @@ export {
   httpCommerceCustomerCreditsGetAuditEntriesBefore,
   httpCommerceCustomerCreditsGetAuditEntriesAfter,
   httpCommerceFulfillmentCreateShipmentsBefore,
+  httpCommerceFulfillmentCreateShipmentsAfter,
+  httpCommerceFulfillmentGetShipmentBefore,
+  httpCommerceFulfillmentGetShipmentAfter,
+  httpCommerceFulfillmentGetShipmentsBefore,
+  httpCommerceFulfillmentGetShipmentsAfter,
+  httpCommerceFulfillmentFulfillShipmentBefore,
+  httpCommerceFulfillmentFulfillShipmentAfter,
+  httpCommerceFulfillmentReassignShipmentBefore,
+  httpCommerceFulfillmentReassignShipmentAfter,
+  httpCommerceFulfillmentReassignShipmentItemsBefore,
+  httpCommerceFulfillmentReassignShipmentItemsAfter,
+  httpCommerceFulfillmentReplaceShipmentBefore,
+  httpCommerceFulfillmentReplaceShipmentAfter,
+  httpCommerceFulfillmentRejectShipmentBefore,
+  httpCommerceFulfillmentRejectShipmentAfter,
+  httpCommerceFulfillmentRejectShipmentItemsBefore,
+  httpCommerceFulfillmentRejectShipmentItemsAfter,
+  httpCommerceFulfillmentTransferShipmentBefore,
+  httpCommerceFulfillmentTransferShipmentAfter,
+  httpCommerceFulfillmentTransferShipmentItemsBefore,
+  httpCommerceFulfillmentTransferShipmentItemsAfter,
+  httpCommerceFulfillmentFutureShipmentsBefore,
+  httpCommerceFulfillmentFutureShipmentsAfter,
+  httpCommerceFulfillmentFutureShipmentItemsBefore,
+  httpCommerceFulfillmentFutureShipmentItemsAfter,
   embeddedCommerceOrdersAddItemBefore,
   embeddedCommerceOrdersAddItemAfter,
   embeddedCommerceOrdersPriceBefore,

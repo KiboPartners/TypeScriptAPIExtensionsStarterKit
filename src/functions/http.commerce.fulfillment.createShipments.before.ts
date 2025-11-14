@@ -1,7 +1,7 @@
 import { Callback, HttpContext } from "../arcTypes";
-import { FulfillmentInfo } from "@kibocommerce/rest-sdk/clients/Commerce/models";
+import { Shipment } from "@kibocommerce/rest-sdk/clients/Fulfillment/models";
 
-function httpCommerceFulfillmentCreateShipmentsBefore(context:HttpContext<FulfillmentInfo>, callback: Callback) {
+function httpCommerceFulfillmentCreateShipmentsBefore(context:HttpContext<Shipment[]>, callback: Callback) {
     console.log("http.commerce.fulfillment.createShipments.before");
 }
 

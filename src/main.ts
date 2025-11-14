@@ -1056,6 +1056,331 @@ const httpCommerceFulfillmentCreateShipmentsBeforeFn = createArcFunction(
   }
 );
 
+const httpCommerceFulfillmentCreateShipmentsAfterFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.createShipments.after"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentCreateShipmentsAfter(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentGetShipmentBeforeFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.getShipment.before"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentGetShipmentBefore(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentGetShipmentAfterFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.getShipment.after"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentGetShipmentAfter(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentGetShipmentsBeforeFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.getShipments.before"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentGetShipmentsBefore(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentGetShipmentsAfterFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.getShipments.after"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentGetShipmentsAfter(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentFulfillShipmentBeforeFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.fulfillShipment.before"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentFulfillShipmentBefore(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentFulfillShipmentAfterFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.fulfillShipment.after"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentFulfillShipmentAfter(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentReassignShipmentBeforeFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.reassignShipment.before"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentReassignShipmentBefore(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentReassignShipmentAfterFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.reassignShipment.after"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentReassignShipmentAfter(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentReassignShipmentItemsBeforeFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.reassignShipmentItems.before"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentReassignShipmentItemsBefore(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentReassignShipmentItemsAfterFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.reassignShipmentItems.after"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentReassignShipmentItemsAfter(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentReplaceShipmentBeforeFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.replaceShipment.before"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentReplaceShipmentBefore(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentReplaceShipmentAfterFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.replaceShipment.after"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentReplaceShipmentAfter(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentRejectShipmentBeforeFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.rejectShipment.before"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentRejectShipmentBefore(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentRejectShipmentAfterFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.rejectShipment.after"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentRejectShipmentAfter(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentRejectShipmentItemsBeforeFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.rejectShipmentItems.before"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentRejectShipmentItemsBefore(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentRejectShipmentItemsAfterFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.rejectShipmentItems.after"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentRejectShipmentItemsAfter(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentTransferShipmentBeforeFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.transferShipment.before"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentTransferShipmentBefore(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentTransferShipmentAfterFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.transferShipment.after"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentTransferShipmentAfter(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentTransferShipmentItemsBeforeFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.transferShipmentItems.before"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentTransferShipmentItemsBefore(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentTransferShipmentItemsAfterFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.transferShipmentItems.after"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentTransferShipmentItemsAfter(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentFutureShipmentsBeforeFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.futureShipments.before"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentFutureShipmentsBefore(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentFutureShipmentsAfterFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.futureShipments.after"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentFutureShipmentsAfter(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentFutureShipmentItemsBeforeFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.futureShipmentItems.before"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentFutureShipmentItemsBefore(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
+const httpCommerceFulfillmentFutureShipmentItemsAfterFn = createArcFunction(
+  ActionId["http.commerce.fulfillment.futureShipmentItems.after"],
+  function (context: any, callback: Callback) {
+    try {
+      extensionFunctions.httpCommerceFulfillmentFutureShipmentItemsAfter(context, callback)
+    } catch (e: any) {
+      console.error(e)
+    } finally {
+      callback();
+    }
+  }
+);
+
 const embeddedCommerceOrdersAddItemBeforeFn = createArcFunction(
   ActionId["embedded.commerce.orders.addItem.before"],
   function (context: any, callback: Callback) {
@@ -1724,13 +2049,38 @@ const enabledFunctions = {
   // "http.commerce.customer.credits.getAuditEntries.before": httpCommerceCustomerCreditsGetAuditEntriesBeforeFn,
   // "http.commerce.customer.credits.getAuditEntries.after": httpCommerceCustomerCreditsGetAuditEntriesAfterFn,
   // "http.commerce.fulfillment.createShipments.before": httpCommerceFulfillmentCreateShipmentsBeforeFn,
+  // "http.commerce.fulfillment.createShipments.after": httpCommerceFulfillmentCreateShipmentsAfterFn,
+  // "http.commerce.fulfillment.getShipment.before": httpCommerceFulfillmentGetShipmentBeforeFn,
+  // "http.commerce.fulfillment.getShipment.after": httpCommerceFulfillmentGetShipmentAfterFn,
+  // "http.commerce.fulfillment.getShipments.before": httpCommerceFulfillmentGetShipmentsBeforeFn,
+  // "http.commerce.fulfillment.getShipments.after": httpCommerceFulfillmentGetShipmentsAfterFn,
+  // "http.commerce.fulfillment.fulfillShipment.before": httpCommerceFulfillmentFulfillShipmentBeforeFn,
+  // "http.commerce.fulfillment.fulfillShipment.after": httpCommerceFulfillmentFulfillShipmentAfterFn,
+  // "http.commerce.fulfillment.reassignShipment.before": httpCommerceFulfillmentReassignShipmentBeforeFn,
+  // "http.commerce.fulfillment.reassignShipment.after": httpCommerceFulfillmentReassignShipmentAfterFn,
+  // "http.commerce.fulfillment.reassignShipmentItems.before": httpCommerceFulfillmentReassignShipmentItemsBeforeFn,
+  // "http.commerce.fulfillment.reassignShipmentItems.after": httpCommerceFulfillmentReassignShipmentItemsAfterFn,
+  // "http.commerce.fulfillment.replaceShipment.before": httpCommerceFulfillmentReplaceShipmentBeforeFn,
+  // "http.commerce.fulfillment.replaceShipment.after": httpCommerceFulfillmentReplaceShipmentAfterFn,
+  // "http.commerce.fulfillment.rejectShipment.before": httpCommerceFulfillmentRejectShipmentBeforeFn,
+  // "http.commerce.fulfillment.rejectShipment.after": httpCommerceFulfillmentRejectShipmentAfterFn,
+  // "http.commerce.fulfillment.rejectShipmentItems.before": httpCommerceFulfillmentRejectShipmentItemsBeforeFn,
+  // "http.commerce.fulfillment.rejectShipmentItems.after": httpCommerceFulfillmentRejectShipmentItemsAfterFn,
+  // "http.commerce.fulfillment.transferShipment.before": httpCommerceFulfillmentTransferShipmentBeforeFn,
+  // "http.commerce.fulfillment.transferShipment.after": httpCommerceFulfillmentTransferShipmentAfterFn,
+  // "http.commerce.fulfillment.transferShipmentItems.before": httpCommerceFulfillmentTransferShipmentItemsBeforeFn,
+  // "http.commerce.fulfillment.transferShipmentItems.after": httpCommerceFulfillmentTransferShipmentItemsAfterFn,
+  // "http.commerce.fulfillment.futureShipments.before": httpCommerceFulfillmentFutureShipmentsBeforeFn,
+  // "http.commerce.fulfillment.futureShipments.after": httpCommerceFulfillmentFutureShipmentsAfterFn,
+  // "http.commerce.fulfillment.futureShipmentItems.before": httpCommerceFulfillmentFutureShipmentItemsBeforeFn,
+  // "http.commerce.fulfillment.futureShipmentItems.after": httpCommerceFulfillmentFutureShipmentItemsAfterFn,
   // "embedded.commerce.orders.addItem.before": embeddedCommerceOrdersAddItemBeforeFn,
   // "embedded.commerce.orders.addItem.after": embeddedCommerceOrdersAddItemAfterFn,
   // "embedded.commerce.orders.price.before": embeddedCommerceOrdersPriceBeforeFn,
   // "embedded.commerce.orders.price.after": embeddedCommerceOrdersPriceAfterFn,
   // "embedded.commerce.orders.deleteItem.before": embeddedCommerceOrdersDeleteItemBeforeFn,
   // "embedded.commerce.orders.deleteItem.after": embeddedCommerceOrdersDeleteItemAfterFn,
-  // "embedded.commerce.orders.action.before": embeddedCommerceOrdersActionBeforeFn,
+  "embedded.commerce.orders.action.before": embeddedCommerceOrdersActionBeforeFn,
   // "embedded.commerce.orders.action.after": embeddedCommerceOrdersActionAfterFn,
   // "embedded.commerce.orders.createFromCart.before": embeddedCommerceOrdersCreateFromCartBeforeFn,
   // "embedded.commerce.orders.createFromCart.after": embeddedCommerceOrdersCreateFromCartAfterFn,

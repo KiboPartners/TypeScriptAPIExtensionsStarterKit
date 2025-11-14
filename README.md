@@ -11,6 +11,7 @@ A comprehensive TypeScript starter kit for developing Kibo API Extensions. This 
 - [Enabling Functions](#enabling-functions)
 - [Development Workflow](#development-workflow)
 - [Examples](#examples)
+- [Event Sender Utility](#event-sender-utility)
 - [Deployment](#deployment)
 - [Tenant Configuration](#tenant-configuration)
 
@@ -307,4 +308,310 @@ This starter kit includes templates for numerous API Extension points:
 - Always call `callback()` when your function completes
 - Handle errors gracefully to prevent platform issues
 - Test thoroughly before deploying to production
+
+---
+
+## Event Sender Utility
+
+The EventSender utility (`src/utils/eventSender.ts`) provides a robust mechanism for sending custom events from your API Extension functions to external webhook endpoints. This allows you to create event-driven integrations and notify external systems about important commerce events.
+
+### Features
+
+- **Automatic retry logic**: 3 attempts with configurable timeout
+- **Built-in error handling**: Comprehensive error logging and graceful failure
+- **Event correlation**: Automatic correlation ID tracking from API context
+- **Standard payload format**: Consistent event structure across all events
+- **Configuration-driven**: Webhook URL and timeout configured via application settings
+- **Connection pooling**: Uses Node.js HTTPS module with connection reuse
+
+### Configuration Setup
+
+Before using the EventSender, you must configure your webhook endpoint in the application configuration:
+
+```json
+{
+  "configuration": {
+    "webhookUrl": "https://your-webhook-endpoint.com/events",
+    "eventTimeout": 5000
+  }
+}
+```
+
+#### Configuration Properties
+
+| Property | Type | Required | Default | Description |
+|----------|------|----------|---------|-------------|
+| `webhookUrl` | string | Yes | - | The HTTPS endpoint that will receive event payloads |
+| `eventTimeout` | number | No | 3000 | Request timeout in milliseconds (max 30 seconds recommended) |
+
+### Event Payload Structure
+
+All events sent by EventSender follow this standardized format:
+
+```typescript
+interface IEventPayload {
+  eventId: string;           // Auto-generated UUID for this event
+  topic: string;             // Event type/category (e.g., "order.accepted")
+  entityId: string;          // ID of the entity (e.g., order ID, product ID)
+  correlationId: string;     // Request correlation ID from Kibo API context
+  timestamp: string;         // ISO 8601 timestamp when event was created
+  extendedProperties: Array<{key: string, value: any}>; // Custom event data
+  isTest: boolean;           // Always false in this implementation
+}
+```
+
+### Basic Usage
+
+#### Import and Initialize
+
+```typescript
+import { EventSender } from "../utils/eventSender";
+
+function myApiExtensionFunction(context: any, callback: Callback) {
+  const eventSender = new EventSender(context);
+  // ... rest of your function logic
+}
+```
+
+#### Send a Simple Event
+
+```typescript
+// Send an event with no additional data
+await eventSender.sendEvent('order.created', orderId);
+```
+
+#### Send an Event with Extended Properties
+
+```typescript
+const extendedProperties = [
+  { key: 'orderNumber', value: order.orderNumber },
+  { key: 'customerEmail', value: order.email },
+  { key: 'totalAmount', value: order.total }
+];
+
+await eventSender.sendEvent('order.completed', order.id, extendedProperties);
+```
+
+### Real-World Examples
+
+#### Example 1: Order Status Change Notification
+
+```typescript
+// src/functions/embedded.commerce.orders.action.before.ts
+import { Callback, EmbeddedCommerceOrdersActionBeforeContext } from "../arcTypes";
+import { EventSender } from "../utils/eventSender";
+
+function embeddedCommerceOrdersActionBefore(context: EmbeddedCommerceOrdersActionBeforeContext, callback: Callback) {
+  const order = context.get.order();
+
+  if (order.status === "PendingReview") {
+    const eventSender = new EventSender(context);
+
+    const orderDetails = [
+      { key: 'orderNumber', value: order.orderNumber },
+      { key: 'customerEmail', value: order.email },
+      { key: 'totalAmount', value: order.total },
+      { key: 'previousStatus', value: order.originalCartId }
+    ];
+
+    // Send async - don't wait for completion to avoid blocking order processing
+    eventSender.sendEvent('order.pending_review', order.id || "", orderDetails)
+      .catch(error => console.error('Failed to send order event:', error));
+  }
+
+  callback();
+}
+
+export default embeddedCommerceOrdersActionBefore;
+```
+
+#### Example 2: Product Inventory Alert
+
+```typescript
+// src/functions/http.commerce.catalog.storefront.product.get.after.ts
+import { Callback } from "../arcTypes";
+import { EventSender } from "../utils/eventSender";
+
+function httpCommerceCatalogStorefrontProductGetAfter(context: any, callback: Callback) {
+  const product = context.response.body;
+
+  if (product && product.inventoryInfo) {
+    const onHandQuantity = product.inventoryInfo.onHandQuantity || 0;
+
+    // Alert when inventory is low
+    if (onHandQuantity <= 5 && onHandQuantity > 0) {
+      const eventSender = new EventSender(context);
+
+      const inventoryData = [
+        { key: 'productCode', value: product.productCode },
+        { key: 'currentStock', value: onHandQuantity },
+        { key: 'productName', value: product.content?.productName },
+        { key: 'location', value: product.inventoryInfo.locationCode }
+      ];
+
+      eventSender.sendEvent('inventory.low_stock_alert', product.productCode, inventoryData);
+    }
+  }
+
+  callback();
+}
+
+export default httpCommerceCatalogStorefrontProductGetAfter;
+```
+
+#### Example 3: Customer Registration Event
+
+```typescript
+// src/functions/http.commerce.customer.accounts.add.after.ts
+import { Callback } from "../arcTypes";
+import { EventSender } from "../utils/eventSender";
+
+function httpCommerceCustomerAccountsAddAfter(context: any, callback: Callback) {
+  const customer = context.response.body;
+
+  if (context.response.statusCode < 300 && customer) {
+    const eventSender = new EventSender(context);
+
+    const customerData = [
+      { key: 'email', value: customer.emailAddress },
+      { key: 'firstName', value: customer.firstName },
+      { key: 'lastName', value: customer.lastName },
+      { key: 'customerType', value: customer.customerType || 'B2C' },
+      { key: 'registrationSource', value: 'storefront' }
+    ];
+
+    eventSender.sendEvent('customer.registered', customer.id.toString(), customerData);
+  }
+
+  callback();
+}
+
+export default httpCommerceCustomerAccountsAddAfter;
+```
+
+### Error Handling and Retry Logic
+
+The EventSender automatically handles errors and retries:
+
+1. **Automatic Retries**: Up to 3 attempts per event
+2. **Timeout Handling**: Configurable request timeout (default 3 seconds)
+3. **Error Logging**: Detailed console logs for debugging
+4. **Non-blocking**: Event failures don't interrupt main API Extension logic
+
+#### Error Scenarios Handled
+
+- Network timeouts
+- HTTP error responses (4xx, 5xx)
+- Invalid webhook URLs
+- JSON serialization errors
+- Connection failures
+
+#### Monitoring Event Delivery
+
+Check the application logs in Kibo Dev Center for event delivery status:
+
+```
+Attempting event 1/3 for topic 'order.accepted' to URL: https://your-webhook.com/events....
+Attempt 1 - SUCCESS
+
+EVENT PAYLOAD
+--------------
+{
+  "eventId": "123e4567-e89b-12d3-a456-426614174000",
+  "topic": "order.accepted",
+  "entityId": "12345",
+  "correlationId": "abc-def-ghi",
+  "timestamp": "2024-01-15T10:30:00.000Z",
+  "extendedProperties": [
+    { "key": "orderNumber", "value": "ORD-001" }
+  ],
+  "isTest": false
+}
+```
+
+### Best Practices
+
+#### 1. Event Naming Conventions
+Use clear, hierarchical topic names:
+- `order.created`, `order.updated`, `order.cancelled`
+- `customer.registered`, `customer.updated`
+- `inventory.low_stock`, `inventory.out_of_stock`
+- `payment.authorized`, `payment.captured`, `payment.failed`
+
+#### 2. Extended Properties
+Include relevant context for downstream systems:
+```typescript
+const extendedProperties = [
+  { key: 'entityType', value: 'order' },
+  { key: 'tenantId', value: context.tenantId },
+  { key: 'siteId', value: context.siteId },
+  { key: 'source', value: 'kibo_api_extension' }
+];
+```
+
+#### 3. Async Event Sending
+For non-critical events, send asynchronously to avoid blocking:
+```typescript
+// Don't wait for event completion
+eventSender.sendEvent(topic, entityId, properties)
+  .catch(error => console.error('Event failed:', error));
+
+callback(); // Continue with main logic
+```
+
+#### 4. Configuration Management
+Store webhook URLs per environment in your configuration:
+```json
+{
+  "configuration": {
+    "webhookUrl": "https://prod-webhooks.yourcompany.com/kibo-events",
+    "eventTimeout": 5000
+  }
+}
+```
+
+### Webhook Endpoint Requirements
+
+Your webhook endpoint should:
+
+1. **Accept POST requests** with `application/json` content type
+2. **Respond with 2xx status** codes for successful processing
+3. **Handle idempotency** using the `eventId` field
+4. **Process timeouts gracefully** (EventSender will retry)
+5. **Validate payload structure** before processing
+
+#### Example Webhook Handler (Node.js/Express)
+
+```typescript
+app.post('/kibo-events', (req, res) => {
+  const event = req.body;
+
+  // Validate required fields
+  if (!event.eventId || !event.topic || !event.entityId) {
+    return res.status(400).json({ error: 'Invalid event payload' });
+  }
+
+  // Process the event
+  try {
+    processKiboEvent(event);
+    res.status(200).json({ received: true, eventId: event.eventId });
+  } catch (error) {
+    console.error('Event processing failed:', error);
+    res.status(500).json({ error: 'Processing failed' });
+  }
+});
+```
+
+### Troubleshooting
+
+#### Common Issues
+
+1. **Events not sending**: Check that `webhookUrl` is configured in application settings
+2. **Timeout errors**: Increase `eventTimeout` value or optimize webhook response time
+3. **JSON errors**: Ensure `extendedProperties` contain serializable values only
+4. **Authentication**: EventSender doesn't include authentication headers - handle this in your webhook endpoint
+
+#### Debug Logging
+
+Enable verbose logging by checking Dev Center application logs. All event attempts and payloads are logged automatically.
 
