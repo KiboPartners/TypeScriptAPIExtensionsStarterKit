@@ -137,7 +137,6 @@ function wrapperSource(actionId, n) {
       await extensionFunctions.${n.camel}(context, callback)
     } catch (e: any) {
       console.error(e)
-    } finally {
       callback();
     }
   }

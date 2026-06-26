@@ -16,7 +16,6 @@ const embeddedCommerceCartsGetAfterFn = createArcFunction(
       await extensionFunctions.embeddedCommerceCartsGetAfter(context, callback)
     } catch (e: any) {
       console.error(e)
-    } finally {
       callback();
     }
   }
