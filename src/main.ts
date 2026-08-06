@@ -11,13 +11,12 @@ import * as extensionFunctions from "./functions"
 
 const embeddedCommerceCartsGetAfterFn = createArcFunction(
   ActionId["embedded.commerce.carts.get.after"],
-  async function (context: any, callback: Callback) {
-    try {
-      await extensionFunctions.embeddedCommerceCartsGetAfter(context, callback)
-    } catch (e: any) {
-      console.error(e)
-      callback();
-    }
+  function (context: any, callback: Callback) {
+    extensionFunctions.embeddedCommerceCartsGetAfter(context, callback)
+      .catch((e: any) => {
+        console.error(e)
+        callback();
+      });
   }
 );
 
