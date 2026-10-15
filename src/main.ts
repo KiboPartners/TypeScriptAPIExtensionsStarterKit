@@ -20,7 +20,20 @@ const embeddedCommerceCartsGetAfterFn = createArcFunction(
   }
 );
 
+const httpCommerceRoutingSuggestionAfterFn = createArcFunction(
+  ActionId["http.commerce.routing.suggestion.after"],
+  async function (context: any, callback: Callback) {
+    try {
+      await extensionFunctions.httpCommerceRoutingSuggestionAfter(context, callback)
+    } catch (e: any) {
+      console.error(e)
+      callback();
+    }
+  }
+);
+
 const enabledFunctions = {
+  "http.commerce.routing.suggestion.after": httpCommerceRoutingSuggestionAfterFn,
   "embedded.commerce.carts.get.after": embeddedCommerceCartsGetAfterFn,
 
 
